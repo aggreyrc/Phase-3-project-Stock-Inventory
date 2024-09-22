@@ -3,7 +3,9 @@ from helpers import(
     list_all_products,
     find_product_by_name,
     find_product_by_id,
-    create_product
+    create_product,
+    update_product,
+    delete_product
 )
 
 def main():
@@ -20,6 +22,10 @@ def main():
         find_product_by_id()
       elif choice == '4':
         create_product()
+      elif choice == '5':
+        update_product()
+      elif choice == '6':
+        delete_product()
       else:
           print('Invalid choice. Please try again.')
           
@@ -31,6 +37,8 @@ def menu():
       print('2. Find product by name') 
       print('3. Find product by ID')
       print('4. Create Product')
+      print('5. Update product price')
+      print('6. Delete product')
       
       
       

@@ -64,3 +64,32 @@ def create_product():
         print("Product added successfully")
     except Exception as exc:
         print(f"An error occurred: {exc}")
+        
+# Update a Product's price
+def update_product():
+    id_ = input("Enter the product's id: ")
+    new_price = input("Enter new price: ")
+    try:
+        product = session.query(Product).filter_by(id=id_).first()
+        if product:
+            product.price = new_price
+            session.commit()
+            print("Product updated successfully")
+        else:
+            print("Product not found")
+    except Exception as exc:
+        print(f"An error occurred: {exc}")
+        
+# Delete Product
+def delete_product():
+    id_ = input("Enter the product's id: ")
+    try:
+        product = session.query(Product).filter_by(id=id_).first()
+        if product:
+            session.delete(product)
+            session.commit()
+            print("Product deleted successfully")
+        else:
+            print("Product not found")
+    except Exception as exc:
+        print(f"An error occurred: {exc}")
