@@ -33,7 +33,7 @@ An inventory management system built using Python, SQLAlchemy, SQLite, and Alemb
 
 3. Setup the database: Initialize the database and create all tables using Alembic migrations:
 
-    ``` alembic upgrade head ```
+     alembic upgrade head 
 
 4. Seed the database : You can use the provided seed.py script to populate the tables with fake data using the Faker library:
 
